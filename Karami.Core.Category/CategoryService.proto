@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+package Karami.Core.Grpc.Category;
+
+/*-------------------------------------------------------------------*/
+
+//CheckExist
+
+message CheckExistRequest {
+    String target_id = 1;
+}
+
+message CheckExistResponse {
+    bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadOne
+
+message ReadOneRequest {
+    String target_id = 1;
+}
+
+message ReadOneResponse {
+    int32 code               = 1;
+    string message           = 2;
+    ReadOneResponseBody body = 3;
+}
+
+message ReadOneResponseBody {
+    string category = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadAllPaginate
+
+message ReadAllPaginatedRequest {
+    Int32 page_number    = 1;
+    Int32 count_per_page = 2;
+}
+
+message ReadAllPaginatedResponse {
+    int32 code                       = 1;
+    string message                   = 2;
+    ReadAllPaginatedResponseBody body = 3;
+}
+
+message ReadAllPaginatedResponseBody {
+    string categories = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//Create
+
+message CreateRequest {
+    String name  = 2;
+}
+
+message CreateResponse {
+    int32 code              = 1;
+    string message          = 2;
+    CreateResponseBody body = 3;
+}
+
+message CreateResponseBody {
+    string category_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Update
+
+message UpdateRequest {
+    String target_id = 1;
+    String name      = 2;
+}
+
+message UpdateResponse {
+    int32 code              = 1;
+    string message          = 2;
+    UpdateResponseBody body = 3;
+}
+
+message UpdateResponseBody {
+    string category_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Delete
+
+message DeleteRequest {
+    String target_id = 1;
+}
+
+message DeleteResponse {
+    int32 code              = 1;
+    string message          = 2;
+    DeleteResponseBody body = 3;
+}
+
+message DeleteResponseBody {
+    string category_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String { string value = 1; }
+message Int32  { int32  value = 1; }
+
+/*-------------------------------------------------------------------*/
+
+service CategoryService {
+    
+    rpc CheckExist(CheckExistRequest) returns (CheckExistResponse) {}
+
+    rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {};
+
+    rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
+
+    rpc Create(CreateRequest) returns (CreateResponse) {};
+
+    rpc Update(UpdateRequest) returns (UpdateResponse) {};
+
+    rpc Delete(DeleteRequest) returns (DeleteResponse) {};
+
+}

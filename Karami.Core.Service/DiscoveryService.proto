@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package Karami.Core.Grpc.Service;
+
+/*-------------------------------------------------------------------*/
+
+//ReadOne
+
+message ReadOneRequest {
+  String name = 1;
+}
+
+message ReadOneResponse {
+  int32 code               = 1;
+  string message           = 2;
+  ReadOneResponseBody body = 3;
+}
+
+message ReadOneResponseBody {
+  Service service = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadAll
+
+message ReadAllRequest {
+  String name = 1;
+}
+
+message ReadAllResponse {
+  int32 code               = 1;
+  string message           = 2;
+  ReadAllResponseBody body = 3;
+}
+
+message ReadAllResponseBody {
+  repeated Service service = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String { string value = 1; }
+message Int32  { int32  value = 1; }
+
+message Service {
+  String name         = 1;
+  String host         = 2;
+  String ip_address   = 3;
+  Int32 port          = 4;
+  bool status         = 5;
+  Int32 response_time = 6;
+}
+
+/*-------------------------------------------------------------------*/
+
+service DiscoveryService {
+
+  rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {}
+
+  rpc ReadAll(ReadAllRequest) returns (ReadAllResponse) {}
+
+}
