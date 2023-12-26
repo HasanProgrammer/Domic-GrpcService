@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.User", "Karami.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.Service", "Karami.Core.Service\Karami.Core.Service.csproj", "{036B2987-8F85-4186-8ECB-5C3EEDFB2005}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.Term", "Karami.Core.Term\Karami.Core.Term.csproj", "{F3723EF6-6069-4595-8A04-3EABD67395A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +68,9 @@ Global
 		{036B2987-8F85-4186-8ECB-5C3EEDFB2005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{036B2987-8F85-4186-8ECB-5C3EEDFB2005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{036B2987-8F85-4186-8ECB-5C3EEDFB2005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3723EF6-6069-4595-8A04-3EABD67395A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3723EF6-6069-4595-8A04-3EABD67395A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3723EF6-6069-4595-8A04-3EABD67395A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3723EF6-6069-4595-8A04-3EABD67395A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
