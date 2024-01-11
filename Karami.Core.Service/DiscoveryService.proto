@@ -42,9 +42,7 @@ message ReadAllByNameResponseBody {
 
 //ReadAll
 
-message ReadAllRequest {
-  String name = 1;
-}
+message ReadAllRequest {}
 
 message ReadAllResponse {
   int32 code               = 1;
