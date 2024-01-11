@@ -22,24 +22,6 @@ message ReadOneResponseBody {
 
 /*-------------------------------------------------------------------*/
 
-//ReadAllByName
-
-message ReadAllByNameRequest {
-  String name = 1;
-}
-
-message ReadAllByNameResponse {
-  int32 code               = 1;
-  string message           = 2;
-  ReadAllByNameResponseBody body = 3;
-}
-
-message ReadAllByNameResponseBody {
-  repeated Service service = 1;
-}
-
-/*-------------------------------------------------------------------*/
-
 //ReadAll
 
 message ReadAllRequest {
@@ -78,8 +60,6 @@ service DiscoveryService {
 
   rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {}
 
-  rpc ReadAllByName(ReadAllByNameRequest) returns (ReadAllByNameResponse) {}
-  
   rpc ReadAll(ReadAllRequest) returns (ReadAllResponse) {}
 
 }
