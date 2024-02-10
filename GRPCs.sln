@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.AggregateArticle", "Karami.Core.AggregateArticle\Karami.Core.AggregateArticle.csproj", "{456F873E-3B40-4BE3-8590-C074F7990F5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.AggregateArticle", "Domic.Core.AggregateArticle\Domic.Core.AggregateArticle.csproj", "{456F873E-3B40-4BE3-8590-C074F7990F5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.Article", "Karami.Core.Article\Karami.Core.Article.csproj", "{CA840211-E479-4970-AD32-02DC521B3C6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Article", "Domic.Core.Article\Domic.Core.Article.csproj", "{CA840211-E479-4970-AD32-02DC521B3C6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.Auth", "Karami.Core.Auth\Karami.Core.Auth.csproj", "{DF3496F5-2ADA-4A70-B27A-777CA1A7FA61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Auth", "Domic.Core.Auth\Domic.Core.Auth.csproj", "{DF3496F5-2ADA-4A70-B27A-777CA1A7FA61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.Category", "Karami.Core.Category\Karami.Core.Category.csproj", "{D40DACB7-290A-4C69-9E1B-168BAAFC049B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Category", "Domic.Core.Category\Domic.Core.Category.csproj", "{D40DACB7-290A-4C69-9E1B-168BAAFC049B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.Comment", "Karami.Core.Comment\Karami.Core.Comment.csproj", "{EB2BF5F7-F579-48B5-B2CD-49007AD96A1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Comment", "Domic.Core.Comment\Domic.Core.Comment.csproj", "{EB2BF5F7-F579-48B5-B2CD-49007AD96A1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.Permission", "Karami.Core.Permission\Karami.Core.Permission.csproj", "{67973AE2-0AB9-47F4-9BBC-E2AA06A1DE85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Permission", "Domic.Core.Permission\Domic.Core.Permission.csproj", "{67973AE2-0AB9-47F4-9BBC-E2AA06A1DE85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.Role", "Karami.Core.Role\Karami.Core.Role.csproj", "{025A3B8A-09BB-4598-9912-281E773C22E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Role", "Domic.Core.Role\Domic.Core.Role.csproj", "{025A3B8A-09BB-4598-9912-281E773C22E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.User", "Karami.Core.User\Karami.Core.User.csproj", "{CA79A9A7-A38A-4E6B-A4A2-B045F285F0AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.User", "Domic.Core.User\Domic.Core.User.csproj", "{CA79A9A7-A38A-4E6B-A4A2-B045F285F0AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.Service", "Karami.Core.Service\Karami.Core.Service.csproj", "{036B2987-8F85-4186-8ECB-5C3EEDFB2005}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Service", "Domic.Core.Service\Domic.Core.Service.csproj", "{036B2987-8F85-4186-8ECB-5C3EEDFB2005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Core.Term", "Karami.Core.Term\Karami.Core.Term.csproj", "{F3723EF6-6069-4595-8A04-3EABD67395A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Term", "Domic.Core.Term\Domic.Core.Term.csproj", "{F3723EF6-6069-4595-8A04-3EABD67395A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

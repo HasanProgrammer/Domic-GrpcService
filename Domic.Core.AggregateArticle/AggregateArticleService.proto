@@ -1,6 +1,6 @@
 ﻿syntax = "proto3";
 
-package Karami.Core.Grpc.AggregateArticle;
+package Domic.Core.AggregateArticle.Grpc;
 
 /*-------------------------------------------------------------------*/
 

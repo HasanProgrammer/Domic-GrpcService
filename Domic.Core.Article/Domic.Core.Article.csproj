@@ -4,8 +4,8 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <PackageId>Domic.Grpc.User</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageId>Domic.Grpc.Article</PackageId>
+    <PackageVersion>1.1.0</PackageVersion>
     <Authors>Karami.Domic</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
@@ -15,11 +15,11 @@
     <PackageReference Include="Grpc.Net.Client" Version="2.46.0" />
     <PackageReference Include="Grpc.Tools" Version="2.46.0" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <Protobuf Include="UserService.proto">
+    <Protobuf Include="ArticleService.proto">
       <Generator>MSBuild:Compile</Generator>
     </Protobuf>
   </ItemGroup>
-  
+
 </Project>

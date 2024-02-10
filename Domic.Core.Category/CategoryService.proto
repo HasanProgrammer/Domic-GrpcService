@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package Karami.Core.Grpc.User;
+package Domic.Core.Category.Grpc;
 
 /*-------------------------------------------------------------------*/
 
@@ -29,7 +29,7 @@ message ReadOneResponse {
 }
 
 message ReadOneResponseBody {
-    string user = 1; //Serialized
+    string category = 1; //Serialized
 }
 
 /*-------------------------------------------------------------------*/
@@ -48,7 +48,7 @@ message ReadAllPaginatedResponse {
 }
 
 message ReadAllPaginatedResponseBody {
-    string users = 1; //Serialized
+    string categories = 1; //Serialized
 }
 
 /*-------------------------------------------------------------------*/
@@ -56,15 +56,7 @@ message ReadAllPaginatedResponseBody {
 //Create
 
 message CreateRequest {
-    String first_name   = 1;
-    String last_name    = 2;
-    String username     = 3;
-    String password     = 4;
-    String phone_number = 5;
-    String email        = 6;
-    String description  = 7;
-    String roles        = 8;
-    String permissions  = 9;
+    String name  = 2;
 }
 
 message CreateResponse {
@@ -74,7 +66,7 @@ message CreateResponse {
 }
 
 message CreateResponseBody {
-    string user_id = 1;
+    string category_id = 1;
 }
 
 /*-------------------------------------------------------------------*/
@@ -82,17 +74,8 @@ message CreateResponseBody {
 //Update
 
 message UpdateRequest {
-    String target_id    = 1;
-    String username     = 2;
-    String password     = 3;
-    String first_name   = 4;
-    String last_name    = 5;
-    String phone_number = 6;
-    String email        = 7;
-    String description  = 8;
-    String roles        = 9;
-    String permissions  = 10;
-    bool is_active      = 11;
+    String target_id = 1;
+    String name      = 2;
 }
 
 message UpdateResponse {
@@ -102,43 +85,25 @@ message UpdateResponse {
 }
 
 message UpdateResponseBody {
-    string user_id = 1;
+    string category_id = 1;
 }
 
 /*-------------------------------------------------------------------*/
 
-//Active
+//Delete
 
-message ActiveRequest {
+message DeleteRequest {
     String target_id = 1;
 }
 
-message ActiveResponse {
+message DeleteResponse {
     int32 code              = 1;
     string message          = 2;
-    ActiveResponseBody body = 3;
+    DeleteResponseBody body = 3;
 }
 
-message ActiveResponseBody {
-    string user_id = 1;
-}
-
-/*-------------------------------------------------------------------*/
-
-//InActive
-
-message InActiveRequest {
-    String target_id = 1;
-}
-
-message InActiveResponse {
-    int32 code                = 1;
-    string message            = 2;
-    InActiveResponseBody body = 3;
-}
-
-message InActiveResponseBody {
-    string user_id = 1;
+message DeleteResponseBody {
+    string category_id = 1;
 }
 
 /*-------------------------------------------------------------------*/
@@ -150,20 +115,18 @@ message Int32  { int32  value = 1; }
 
 /*-------------------------------------------------------------------*/
 
-service UserService {
-
-    rpc Create(CreateRequest) returns (CreateResponse) {};
-
-    rpc Update(UpdateRequest) returns (UpdateResponse) {};
+service CategoryService {
     
-    rpc Active(ActiveRequest) returns (ActiveResponse) {};
-    
-    rpc InActive(InActiveRequest) returns (InActiveResponse) {};
-
     rpc CheckExist(CheckExistRequest) returns (CheckExistResponse) {}
 
     rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {};
 
-    rpc ReadAllPaginate(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
+    rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
+
+    rpc Create(CreateRequest) returns (CreateResponse) {};
+
+    rpc Update(UpdateRequest) returns (UpdateResponse) {};
+
+    rpc Delete(DeleteRequest) returns (DeleteResponse) {};
 
 }

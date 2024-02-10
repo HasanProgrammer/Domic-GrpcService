@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <PackageId>Domic.Grpc.Article</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageId>Domic.Grpc.Term</PackageId>
+    <PackageVersion>1.1.0</PackageVersion>
     <Authors>Karami.Domic</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="ArticleService.proto">
+    <Protobuf Include="TermService.proto">
       <Generator>MSBuild:Compile</Generator>
     </Protobuf>
   </ItemGroup>
