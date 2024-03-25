@@ -1,0 +1,179 @@
+syntax = "proto3";
+
+package Domic.Core.Video.Grpc;
+
+/*-------------------------------------------------------------------*/
+
+//CheckExist
+
+message CheckExistRequest {
+    String video_id = 1;
+}
+
+message CheckExistResponse {
+    bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadOne
+
+message ReadOneRequest {
+    String video_id = 1;
+}
+
+message ReadOneResponse {
+    int32 code               = 1;
+    string message           = 2;
+    ReadOneResponseBody body = 3;
+}
+
+message ReadOneResponseBody {
+    string video = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadAllPaginate
+
+message ReadAllPaginatedRequest {
+    Int32 page_number    = 1;
+    Int32 count_per_page = 2;
+}
+
+message ReadAllPaginatedResponse {
+    int32 code                       = 1;
+    string message                   = 2;
+    ReadAllPaginatedResponseBody body = 3;
+}
+
+message ReadAllPaginatedResponseBody {
+    string videos = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//Create
+
+message CreateRequest {
+    String term_id     = 1;
+    String video_url   = 2;
+    String name        = 3;
+    String description = 5;
+    Int32 status       = 6;
+}
+
+message CreateResponse {
+    int32 code              = 1;
+    string message          = 2;
+    CreateResponseBody body = 3;
+}
+
+message CreateResponseBody {
+    string video_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Update
+
+message UpdateRequest {
+    String term_id     = 1;
+    String video_url   = 2;
+    String name        = 3;
+    String description = 5;
+    Int32 status       = 6;
+}
+
+message UpdateResponse {
+    int32 code              = 1;
+    string message          = 2;
+    UpdateResponseBody body = 3;
+}
+
+message UpdateResponseBody {
+    string video_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Active
+
+message ActiveRequest {
+    String video_id = 1;
+}
+
+message ActiveResponse {
+    int32 code              = 1;
+    string message          = 2;
+    ActiveResponseBody body = 3;
+}
+
+message ActiveResponseBody {
+    string video_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//InActive
+
+message InActiveRequest {
+    String video_id = 1;
+}
+
+message InActiveResponse {
+    int32 code                = 1;
+    string message            = 2;
+    InActiveResponseBody body = 3;
+}
+
+message InActiveResponseBody {
+    string video_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Delete
+
+message DeleteRequest {
+    String video_id = 1;
+}
+
+message DeleteResponse {
+    int32 code              = 1;
+    string message          = 2;
+    DeleteResponseBody body = 3;
+}
+
+message DeleteResponseBody {
+    string video_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String { string value = 1; }
+message Int32  { int32  value = 1; }
+
+/*-------------------------------------------------------------------*/
+
+service VideoService {
+
+    rpc Create(CreateRequest) returns (CreateResponse) {};
+
+    rpc Update(UpdateRequest) returns (UpdateResponse) {};
+    
+    rpc Active(ActiveRequest) returns (ActiveResponse) {};
+    
+    rpc InActive(InActiveRequest) returns (InActiveResponse) {};
+    
+    rpc Delete(DeleteRequest) returns (DeleteResponse) {};
+
+    rpc CheckExist(CheckExistRequest) returns (CheckExistResponse) {}
+
+    rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {};
+
+    rpc ReadAllPaginate(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
+
+}
