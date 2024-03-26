@@ -3,7 +3,11 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
+        <PackageId>Domic.Grpc.Video</PackageId>
+        <PackageVersion>1.1.0</PackageVersion>
+        <Authors>Karami.Domic</Authors>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
