@@ -1,0 +1,132 @@
+﻿syntax = "proto3";
+
+package Domic.Core.TermCommentAnswer.Grpc;
+
+/*-------------------------------------------------------------------*/
+
+//Check
+
+message CheckExistRequest {
+  String answer_id = 1;
+}
+
+message CheckExistResponse {
+  bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Create
+
+message CreateRequest {
+  String comment_id = 1;
+  String answer = 2;
+}
+
+message CreateResponse {
+  int32 code = 1;
+  string message = 2;
+  CreateResponseBody body = 3;
+}
+
+message CreateResponseBody {
+  string answer_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Update
+
+message UpdateRequest {
+  String answer_id = 1;
+  String answer = 3;
+}
+
+message UpdateResponse {
+  int32 code = 1;
+  string message = 2;
+  UpdateResponseBody body = 3;
+}
+
+message UpdateResponseBody {
+  string answer_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Active
+
+message ActiveRequest {
+  String answer_id = 1;
+}
+
+message ActiveResponse {
+  int32 code = 1;
+  string message = 2;
+  ActiveResponseBody body = 3;
+}
+
+message ActiveResponseBody {
+  string answer_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//InActive
+
+message InActiveRequest {
+  String answer_id = 1;
+}
+
+message InActiveResponse {
+  int32 code = 1;
+  string message = 2;
+  InActiveResponseBody body = 3;
+}
+
+message InActiveResponseBody {
+  string answer_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Delete
+
+message DeleteRequest {
+  String answer_id = 1;
+}
+
+message DeleteResponse {
+  int32 code = 1;
+  string message = 2;
+  DeleteResponseBody body = 3;
+}
+
+message DeleteResponseBody {
+  string answer_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String {string value = 1;}
+message Int32  {int32  value = 1;}
+
+/*-------------------------------------------------------------------*/
+
+service TermCommentAnswerService {
+
+  rpc CheckExist(CheckExistRequest) returns (CheckExistResponse) {}
+
+  rpc Create(CreateRequest) returns (CreateResponse) {}
+
+  rpc Update(UpdateRequest) returns (UpdateResponse) {}
+
+  rpc Active(ActiveRequest) returns (ActiveResponse) {}
+
+  rpc InActive(InActiveRequest) returns (InActiveResponse) {}
+
+  rpc Delete(DeleteRequest) returns (DeleteResponse) {}
+
+}
