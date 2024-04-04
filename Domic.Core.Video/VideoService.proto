@@ -79,8 +79,9 @@ message CreateResponseBody {
 
 message UpdateRequest {
     String term_id     = 1;
-    String video_url   = 2;
-    String name        = 3;
+    String video_id    = 2;
+    String video_url   = 3;
+    String name        = 4;
     String description = 5;
     Int32 status       = 6;
 }
