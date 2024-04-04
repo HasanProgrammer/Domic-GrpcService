@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Term", "Domic.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Video", "Domic.Core.Video\Domic.Core.Video.csproj", "{B5B02B4B-913F-4973-AC53-B63A5473B3F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.AggregateTerm", "Domic.Core.AggregateTerm\Domic.Core.AggregateTerm.csproj", "{51985BA3-3DE0-48CE-A87F-6E3206876132}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,5 +80,9 @@ Global
 		{B5B02B4B-913F-4973-AC53-B63A5473B3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5B02B4B-913F-4973-AC53-B63A5473B3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5B02B4B-913F-4973-AC53-B63A5473B3F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51985BA3-3DE0-48CE-A87F-6E3206876132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51985BA3-3DE0-48CE-A87F-6E3206876132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51985BA3-3DE0-48CE-A87F-6E3206876132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51985BA3-3DE0-48CE-A87F-6E3206876132}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

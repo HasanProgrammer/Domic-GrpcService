@@ -1,0 +1,37 @@
+﻿syntax = "proto3";
+
+package Domic.Core.AggregateTerm.Grpc;
+
+/*-------------------------------------------------------------------*/
+
+//ReadAllPaginate
+
+message ReadAllPaginatedRequest {
+  Int32 page_number = 1;
+  Int32 count_per_page = 2;
+}
+
+message ReadAllPaginatedResponse {
+  int32 code = 1;
+  string message = 2;
+  ReadAllPaginatedResponseBody body = 3;
+}
+
+message ReadAllPaginatedResponseBody {
+  string terms = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String { string value = 1; }
+message Int32  { int32  value = 1; }
+
+/*-------------------------------------------------------------------*/
+
+service AggregateTermService {
+
+  rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {}
+
+}
