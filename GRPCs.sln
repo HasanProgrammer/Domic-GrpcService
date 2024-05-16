@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Video", "Domic.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.AggregateTerm", "Domic.Core.AggregateTerm\Domic.Core.AggregateTerm.csproj", "{51985BA3-3DE0-48CE-A87F-6E3206876132}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Ticket", "Domic.Core.Ticket\Domic.Core.Ticket.csproj", "{8618EBF7-D3FA-45F3-8A45-2F6417E6103F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,5 +86,9 @@ Global
 		{51985BA3-3DE0-48CE-A87F-6E3206876132}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51985BA3-3DE0-48CE-A87F-6E3206876132}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51985BA3-3DE0-48CE-A87F-6E3206876132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8618EBF7-D3FA-45F3-8A45-2F6417E6103F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8618EBF7-D3FA-45F3-8A45-2F6417E6103F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8618EBF7-D3FA-45F3-8A45-2F6417E6103F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8618EBF7-D3FA-45F3-8A45-2F6417E6103F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

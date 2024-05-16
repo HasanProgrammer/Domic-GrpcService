@@ -1,0 +1,178 @@
+syntax = "proto3";
+
+package Domic.Core.Ticket.Grpc;
+
+/*-------------------------------------------------------------------*/
+
+//CheckExist
+
+message CheckExistRequest {
+  String Ticket_id = 1;
+}
+
+message CheckExistResponse {
+  bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadOne
+
+message ReadOneRequest {
+  String Ticket_id = 1;
+}
+
+message ReadOneResponse {
+  int32 code               = 1;
+  string message           = 2;
+  ReadOneResponseBody body = 3;
+}
+
+message ReadOneResponseBody {
+  string Ticket = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadAllPaginate
+
+message ReadAllPaginatedRequest {
+  Int32 page_number    = 1;
+  Int32 count_per_page = 2;
+}
+
+message ReadAllPaginatedResponse {
+  int32 code                       = 1;
+  string message                   = 2;
+  ReadAllPaginatedResponseBody body = 3;
+}
+
+message ReadAllPaginatedResponseBody {
+  string Tickets = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//Create
+
+message CreateRequest {
+  String title       = 1;
+  String description = 2;
+  Int32 status       = 3;
+  Int32 priority     = 4;
+}
+
+message CreateResponse {
+  int32 code              = 1;
+  string message          = 2;
+  CreateResponseBody body = 3;
+}
+
+message CreateResponseBody {
+  string ticket_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Update
+
+message UpdateRequest {
+  String ticket_id   = 1;
+  String title       = 2;
+  String description = 3;
+  Int32 status       = 4;
+  Int32 priority     = 5;
+}
+
+message UpdateResponse {
+  int32 code              = 1;
+  string message          = 2;
+  UpdateResponseBody body = 3;
+}
+
+message UpdateResponseBody {
+  string ticket_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Active
+
+message ActiveRequest {
+  String ticket_id = 1;
+}
+
+message ActiveResponse {
+  int32 code              = 1;
+  string message          = 2;
+  ActiveResponseBody body = 3;
+}
+
+message ActiveResponseBody {
+  string ticket_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//InActive
+
+message InActiveRequest {
+  String ticket_id = 1;
+}
+
+message InActiveResponse {
+  int32 code                = 1;
+  string message            = 2;
+  InActiveResponseBody body = 3;
+}
+
+message InActiveResponseBody {
+  string ticket_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Delete
+
+message DeleteRequest {
+  String ticket_id = 1;
+}
+
+message DeleteResponse {
+  int32 code              = 1;
+  string message          = 2;
+  DeleteResponseBody body = 3;
+}
+
+message DeleteResponseBody {
+  string ticket_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String { string value = 1; }
+message Int32  { int32  value = 1; }
+
+/*-------------------------------------------------------------------*/
+
+service TicketService {
+
+  rpc Create(CreateRequest) returns (CreateResponse) {};
+
+  rpc Update(UpdateRequest) returns (UpdateResponse) {};
+
+  rpc Active(ActiveRequest) returns (ActiveResponse) {};
+
+  rpc InActive(InActiveRequest) returns (InActiveResponse) {};
+
+  rpc Delete(DeleteRequest) returns (DeleteResponse) {};
+
+  rpc CheckExist(CheckExistRequest) returns (CheckExistResponse) {}
+
+  rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {};
+
+  rpc ReadAllPaginate(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
+
+}
