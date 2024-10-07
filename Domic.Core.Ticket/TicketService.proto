@@ -78,11 +78,12 @@ message CreateResponseBody {
 //Update
 
 message UpdateRequest {
-  String ticket_id   = 1;
-  String title       = 2;
-  String description = 3;
-  Int32 status       = 4;
-  Int32 priority     = 5;
+  Int32 category_id  = 1;
+  String ticket_id   = 2;
+  String title       = 3;
+  String description = 4;
+  Int32 status       = 5;
+  Int32 priority     = 6;
 }
 
 message UpdateResponse {
