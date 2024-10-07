@@ -56,7 +56,7 @@ message ReadAllPaginatedResponseBody {
 //Create
 
 message CreateRequest {
-  Int32 category_id  = 1;
+  String category_id = 1;
   String title       = 2;
   String description = 3;
   Int32 status       = 4;
@@ -78,7 +78,7 @@ message CreateResponseBody {
 //Update
 
 message UpdateRequest {
-  Int32 category_id  = 1;
+  String category_id = 1;
   String ticket_id   = 2;
   String title       = 3;
   String description = 4;
