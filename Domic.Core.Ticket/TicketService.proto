@@ -56,10 +56,11 @@ message ReadAllPaginatedResponseBody {
 //Create
 
 message CreateRequest {
-  String title       = 1;
-  String description = 2;
-  Int32 status       = 3;
-  Int32 priority     = 4;
+  Int32 category_id  = 1;
+  String title       = 2;
+  String description = 3;
+  Int32 status       = 4;
+  Int32 priority     = 5;
 }
 
 message CreateResponse {
