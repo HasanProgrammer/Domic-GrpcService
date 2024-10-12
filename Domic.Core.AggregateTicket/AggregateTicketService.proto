@@ -7,12 +7,14 @@ package Domic.Core.AggregateTicket.Grpc;
 //ReadAllPaginate
 
 message ReadAllPaginatedRequest {
-  Int32 page_number = 1;
+  Int32 page_number    = 1;
   Int32 count_per_page = 2;
+  String user_id       = 3;
+  String search_text   = 4;
 }
 
 message ReadAllPaginatedResponse {
-  int32 code = 1;
+  int32 code     = 1;
   string message = 2;
   ReadAllPaginatedResponseBody body = 3;
 }
@@ -27,6 +29,7 @@ message ReadAllPaginatedResponseBody {
 
 message ReadOneRequest {
   String ticket_id = 1;
+  String user_id   = 2;
 }
 
 message ReadOneResponse {
@@ -49,7 +52,7 @@ message Int32  { int32  value = 1; }
 /*-------------------------------------------------------------------*/
 
 service AggregateTicketService {
-
+  
   rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {}
   rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {}
 
