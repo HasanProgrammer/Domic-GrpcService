@@ -20,7 +20,7 @@ message CreateResponse {
 }
 
 message CreateResponseBody {
-    string transaction_id = 1;
+    string bank_gateway_url = 1;
 }
 
 /*-------------------------------------------------------------------*/
