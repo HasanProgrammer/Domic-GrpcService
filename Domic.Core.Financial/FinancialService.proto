@@ -25,6 +25,25 @@ message CreateResponseBody {
 
 /*-------------------------------------------------------------------*/
 
+//PaymentVerification
+
+message PaymentVerificationRequest {
+    Int64 amount                   = 1;
+    String bank_gateway_secret_key = 2;
+}
+
+message PaymentVerificationResponse {
+    int32 code                           = 1;
+    string message                       = 2;
+    PaymentVerificationResponseBody body = 3;
+}
+
+message PaymentVerificationResponseBody {
+    bool status = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
 //Global
 
 message String { string value = 1; }
@@ -36,5 +55,6 @@ message Int64  { int64  value = 1; }
 service FinancialService {
 
     rpc Create(CreateRequest) returns (CreateResponse) {};
+    rpc PaymentVerification(PaymentVerificationRequest) returns (PaymentVerificationResponse) {};
 
 }
