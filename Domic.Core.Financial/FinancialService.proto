@@ -39,7 +39,8 @@ message PaymentVerificationResponse {
 }
 
 message PaymentVerificationResponseBody {
-    bool status = 1;
+    bool status               = 1;
+    String transaction_number = 2;
 }
 
 /*-------------------------------------------------------------------*/
