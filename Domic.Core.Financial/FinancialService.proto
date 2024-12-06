@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package Domic.Core.Financial.Grpc;
+
+/*-------------------------------------------------------------------*/
+
+//Create
+
+message CreateRequest {
+    String account_id      = 1;
+    Int64 increased_amount = 2;
+    Int64 decreased_amount = 3;
+    Int32 transaction_type = 4;
+}
+
+message CreateResponse {
+    int32 code              = 1;
+    string message          = 2;
+    CreateResponseBody body = 3;
+}
+
+message CreateResponseBody {
+    string transaction_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String { string value = 1; }
+message Int32  { int32  value = 1; }
+message Int64  { int64  value = 1; }
+
+/*-------------------------------------------------------------------*/
+
+service FinancialService {
+
+    rpc Create(CreateRequest) returns (CreateResponse) {};
+
+}

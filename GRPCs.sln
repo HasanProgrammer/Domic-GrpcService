@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Ticket", "Domic.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.AggregateTicket", "Domic.Core.AggregateTicket\Domic.Core.AggregateTicket.csproj", "{B853DF00-0FC4-4E6E-8733-79AFF3B4CF6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Financial", "Domic.Core.Financial\Domic.Core.Financial.csproj", "{C77C3732-2BD0-4F8C-B039-7EF4BE2510B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -96,5 +98,9 @@ Global
 		{B853DF00-0FC4-4E6E-8733-79AFF3B4CF6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B853DF00-0FC4-4E6E-8733-79AFF3B4CF6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B853DF00-0FC4-4E6E-8733-79AFF3B4CF6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C77C3732-2BD0-4F8C-B039-7EF4BE2510B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C77C3732-2BD0-4F8C-B039-7EF4BE2510B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C77C3732-2BD0-4F8C-B039-7EF4BE2510B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C77C3732-2BD0-4F8C-B039-7EF4BE2510B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
