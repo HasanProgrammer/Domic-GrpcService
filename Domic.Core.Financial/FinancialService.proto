@@ -25,6 +25,28 @@ message CreateResponseBody {
 
 /*-------------------------------------------------------------------*/
 
+//CreateTransactionRequest
+
+message CreateTransactionRequest {
+    String account_id                  = 1;
+    Int64 amount                       = 2;
+    Int32 status                       = 3;
+    String reject_reason               = 4;
+    String bank_transfer_receipt_image = 5;
+}
+
+message CreateTransactionRequestResponse {
+    int32 code                        = 1;
+    string message                    = 2;
+    CreateTransactionRequestBody body = 3;
+}
+
+message CreateTransactionRequestBody {
+    bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
 //PaymentVerification
 
 message PaymentVerificationRequest {
@@ -56,6 +78,7 @@ message Int64  { int64  value = 1; }
 service FinancialService {
 
     rpc Create(CreateRequest) returns (CreateResponse) {};
+    rpc CreateTransactionRequest(CreateTransactionRequest) returns (CreateTransactionRequestResponse) {};
     rpc PaymentVerification(PaymentVerificationRequest) returns (PaymentVerificationResponse) {};
 
 }
