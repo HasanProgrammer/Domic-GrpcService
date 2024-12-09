@@ -47,6 +47,46 @@ message CreateTransactionRequestResponseBody {
 
 /*-------------------------------------------------------------------*/
 
+//ChangeStatusTransactionRequest
+
+message ChangeStatusTransactionRequestObject {
+    String id                          = 1;
+    Int32 status                       = 2;
+    String reject_reason               = 3;
+    String bank_transfer_receipt_image = 4;
+}
+
+message ChangeStatusTransactionRequestResponse {
+    int32 code                                      = 1;
+    string message                                  = 2;
+    ChangeStatusTransactionRequestResponseBody body = 3;
+}
+
+message ChangeStatusTransactionRequestResponseBody {
+    bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//ChangeAmountTransactionRequest
+
+message ChangeAmountTransactionRequestObject {
+    String id    = 1;
+    Int64 amount = 2;
+}
+
+message ChangeAmountTransactionRequestResponse {
+    int32 code                                      = 1;
+    string message                                  = 2;
+    ChangeAmountTransactionRequestResponseBody body = 3;
+}
+
+message ChangeAmountTransactionRequestResponseBody {
+    bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
 //PaymentVerification
 
 message PaymentVerificationRequest {
@@ -79,6 +119,8 @@ service FinancialService {
 
     rpc Create(CreateRequest) returns (CreateResponse) {};
     rpc CreateTransactionRequest(CreateTransactionRequestObject) returns (CreateTransactionRequestResponse) {};
+    rpc ChangeStatusTransactionRequest(ChangeStatusTransactionRequestObject) returns (ChangeStatusTransactionRequestResponse) {};
+    rpc ChangeAmountTransactionRequest(ChangeAmountTransactionRequestObject) returns (ChangeAmountTransactionRequestResponse) {};
     rpc PaymentVerification(PaymentVerificationRequest) returns (PaymentVerificationResponse) {};
 
 }
