@@ -27,7 +27,7 @@ message CreateResponseBody {
 
 //CreateTransactionRequest
 
-message CreateTransactionRequest {
+message CreateTransactionRequestObject {
     String account_id                  = 1;
     Int64 amount                       = 2;
     Int32 status                       = 3;
@@ -78,7 +78,7 @@ message Int64  { int64  value = 1; }
 service FinancialService {
 
     rpc Create(CreateRequest) returns (CreateResponse) {};
-    rpc CreateTransactionRequest(CreateTransactionRequest) returns (CreateTransactionRequestResponse) {};
+    rpc CreateTransactionRequest(CreateTransactionRequestObject) returns (CreateTransactionRequestResponse) {};
     rpc PaymentVerification(PaymentVerificationRequest) returns (PaymentVerificationResponse) {};
 
 }
