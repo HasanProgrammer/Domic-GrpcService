@@ -36,12 +36,12 @@ message CreateTransactionRequestObject {
 }
 
 message CreateTransactionRequestResponse {
-    int32 code                        = 1;
-    string message                    = 2;
-    CreateTransactionRequestBody body = 3;
+    int32 code                                = 1;
+    string message                            = 2;
+    CreateTransactionRequestResponseBody body = 3;
 }
 
-message CreateTransactionRequestBody {
+message CreateTransactionRequestResponseBody {
     bool result = 1;
 }
 
