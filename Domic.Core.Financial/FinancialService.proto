@@ -68,6 +68,26 @@ message ChangeStatusTransactionRequestResponseBody {
 
 /*-------------------------------------------------------------------*/
 
+//DecreaseBalanceOfWalletRequest
+
+message DecreaseBalanceOfWalletRequest {
+    String account_id = 1;
+    Int64 value       = 2;
+}
+
+message DecreaseBalanceOfWalletResponse {
+    int32 code                               = 1;
+    string message                           = 2;
+    DecreaseBalanceOfWalletResponseBody body = 3;
+}
+
+message DecreaseBalanceOfWalletResponseBody {
+    bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+
 //ChangeAmountTransactionRequest
 
 message ChangeAmountTransactionRequestObject {
@@ -118,6 +138,7 @@ message Int64  { int64  value = 1; }
 service FinancialService {
 
     rpc Create(CreateRequest) returns (CreateResponse) {};
+    rpc DecreaseBalanceOfWallet(DecreaseBalanceOfWalletRequest) returns (DecreaseBalanceOfWalletResponse) {};
     rpc CreateTransactionRequest(CreateTransactionRequestObject) returns (CreateTransactionRequestResponse) {};
     rpc ChangeStatusTransactionRequest(ChangeStatusTransactionRequestObject) returns (ChangeStatusTransactionRequestResponse) {};
     rpc ChangeAmountTransactionRequest(ChangeAmountTransactionRequestObject) returns (ChangeAmountTransactionRequestResponse) {};
