@@ -39,6 +39,11 @@ message ReadOneResponseBody {
 message ReadAllPaginatedRequest {
     Int32 page_number    = 1;
     Int32 count_per_page = 2;
+    String first_name    = 3;
+    String last_name     = 4;
+    String username      = 5;
+    String phone_number  = 6;
+    String email         = 7;
 }
 
 message ReadAllPaginatedResponse {
@@ -164,6 +169,6 @@ service UserService {
 
     rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {};
 
-    rpc ReadAllPaginate(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
+    rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
 
 }
