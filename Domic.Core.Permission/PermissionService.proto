@@ -22,7 +22,7 @@ message ReadOneResponseBody {
 
 /*-------------------------------------------------------------------*/
 
-//ReadAllPaginate
+//ReadAllPaginated
 
 message ReadAllPaginatedRequest {
     Int32 page_number    = 1;
@@ -36,6 +36,26 @@ message ReadAllPaginatedResponse {
 }
 
 message ReadAllPaginatedResponseBody {
+    string permissions = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadAllPaginatedBasedOnRoles
+
+message ReadAllBasedOnRolesPaginatedRequest {
+    Int32 page_number    = 1;
+    Int32 count_per_page = 2;
+    String roles         = 3; //Serialized ( Id )
+}
+
+message ReadAllBasedOnRolesPaginatedResponse {
+    int32 code                                    = 1;
+    string message                                = 2;
+    ReadAllBasedOnRolesPaginatedResponseBody body = 3;
+}
+
+message ReadAllBasedOnRolesPaginatedResponseBody {
     string permissions = 1; //Serialized
 }
 
@@ -117,6 +137,8 @@ service PermissionService {
     rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {};
 
     rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
+    
+    rpc ReadAllBasedOnRolesPaginated(ReadAllBasedOnRolesPaginatedRequest) returns (ReadAllBasedOnRolesPaginatedResponse) {};
 
     rpc Create(CreateRequest) returns (CreateResponse) {};
 
