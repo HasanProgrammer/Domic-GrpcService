@@ -125,7 +125,7 @@ service RoleService {
 
   rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {}
 
-  rpc ReadAllPaginate(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {}
+  rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {}
 
   rpc Search(SearchRequest) returns (SearchResponse) {}
 
