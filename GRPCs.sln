@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.AggregateArticle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Article", "Domic.Core.Article\Domic.Core.Article.csproj", "{CA840211-E479-4970-AD32-02DC521B3C6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Auth", "Domic.Core.Auth\Domic.Core.Auth.csproj", "{DF3496F5-2ADA-4A70-B27A-777CA1A7FA61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Identity", "Domic.Core.Identity\Domic.Core.Identity.csproj", "{DF3496F5-2ADA-4A70-B27A-777CA1A7FA61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Category", "Domic.Core.Category\Domic.Core.Category.csproj", "{D40DACB7-290A-4C69-9E1B-168BAAFC049B}"
 EndProject
