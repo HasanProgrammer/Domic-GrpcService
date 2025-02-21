@@ -7,7 +7,7 @@ package Domic.Core.Term.Grpc;
 //CheckExist
 
 message CheckExistRequest {
-    String term_id = 1;
+    String id = 1;
 }
 
 message CheckExistResponse {
@@ -19,7 +19,7 @@ message CheckExistResponse {
 //ReadOne
 
 message ReadOneRequest {
-    String term_id = 1;
+    String id = 1;
 }
 
 message ReadOneResponse {
@@ -71,7 +71,7 @@ message CreateResponse {
 }
 
 message CreateResponseBody {
-    string term_id = 1;
+    string id = 1;
 }
 
 /*-------------------------------------------------------------------*/
@@ -79,7 +79,7 @@ message CreateResponseBody {
 //Update
 
 message UpdateRequest {
-    String term_id     = 1;
+    String id          = 1;
     String category_id = 2;
     String image_url   = 3;
     String name        = 4;
@@ -95,7 +95,7 @@ message UpdateResponse {
 }
 
 message UpdateResponseBody {
-    string term_id = 1;
+    string id = 1;
 }
 
 /*-------------------------------------------------------------------*/
@@ -103,7 +103,7 @@ message UpdateResponseBody {
 //Active
 
 message ActiveRequest {
-    String term_id = 1;
+    String id = 1;
 }
 
 message ActiveResponse {
@@ -113,7 +113,7 @@ message ActiveResponse {
 }
 
 message ActiveResponseBody {
-    string term_id = 1;
+    string id = 1;
 }
 
 /*-------------------------------------------------------------------*/
@@ -121,7 +121,7 @@ message ActiveResponseBody {
 //InActive
 
 message InActiveRequest {
-    String term_id = 1;
+    String id = 1;
 }
 
 message InActiveResponse {
@@ -131,7 +131,7 @@ message InActiveResponse {
 }
 
 message InActiveResponseBody {
-    string term_id = 1;
+    string id = 1;
 }
 
 /*-------------------------------------------------------------------*/
@@ -139,7 +139,7 @@ message InActiveResponseBody {
 //Delete
 
 message DeleteRequest {
-    String term_id = 1;
+    String id = 1;
 }
 
 message DeleteResponse {
@@ -149,7 +149,7 @@ message DeleteResponse {
 }
 
 message DeleteResponseBody {
-    string term_id = 1;
+    string id = 1;
 }
 
 /*-------------------------------------------------------------------*/
