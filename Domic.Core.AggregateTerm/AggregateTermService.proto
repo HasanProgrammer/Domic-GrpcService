@@ -9,6 +9,7 @@ package Domic.Core.AggregateTerm.Grpc;
 message ReadAllPaginatedRequest {
   Int32 page_number = 1;
   Int32 count_per_page = 2;
+  String user_id = 3;
 }
 
 message ReadAllPaginatedResponse {
