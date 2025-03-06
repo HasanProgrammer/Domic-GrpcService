@@ -10,6 +10,7 @@ message ReadAllPaginatedRequest {
   Int32 page_number = 1;
   Int32 count_per_page = 2;
   String user_id = 3;
+  String search_text = 4;
 }
 
 message ReadAllPaginatedResponse {
@@ -24,6 +25,24 @@ message ReadAllPaginatedResponseBody {
 
 /*-------------------------------------------------------------------*/
 
+//ReadOne
+
+message ReadOneRequest {
+  String id = 1;
+}
+
+message ReadOneResponse {
+  int32 code               = 1;
+  string message           = 2;
+  ReadOneResponseBody body = 3;
+}
+
+message ReadOneResponseBody {
+  string term = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
 //Global
 
 message String { string value = 1; }
@@ -33,6 +52,8 @@ message Int32  { int32  value = 1; }
 
 service AggregateTermService {
 
+  rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {}
+  
   rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {}
 
 }
