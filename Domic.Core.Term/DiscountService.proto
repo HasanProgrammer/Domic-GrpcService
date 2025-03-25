@@ -1,0 +1,184 @@
+syntax = "proto3";
+
+package Domic.Core.Discount.Grpc;
+
+/*-------------------------------------------------------------------*/
+
+//CheckExist
+
+message CheckExistRequest {
+    String id = 1;
+}
+
+message CheckExistResponse {
+    bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadOne
+
+message ReadOneRequest {
+    String id = 1;
+}
+
+message ReadOneResponse {
+    int32 code               = 1;
+    string message           = 2;
+    ReadOneResponseBody body = 3;
+}
+
+message ReadOneResponseBody {
+    string discount = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadAllPaginate
+
+message ReadAllPaginatedRequest {
+    Int32 page_number    = 1;
+    Int32 count_per_page = 2;
+}
+
+message ReadAllPaginatedResponse {
+    int32 code                       = 1;
+    string message                   = 2;
+    ReadAllPaginatedResponseBody body = 3;
+}
+
+message ReadAllPaginatedResponseBody {
+    string discounts = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//Create
+
+message CreateRequest {
+    String code               = 1;
+    Int32 discount_percentage = 2;
+    String expiration_date    = 3;
+    Int32 usage_limit         = 4;
+    Int32 used_count          = 5;
+    String description        = 6;
+    repeated string term_ids  = 7;
+}
+
+message CreateResponse {
+    int32 code              = 1;
+    string message          = 2;
+    CreateResponseBody body = 3;
+}
+
+message CreateResponseBody {
+    string id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Update
+
+message UpdateRequest {
+    String Id                 = 1;
+    String code               = 2;
+    Int32 discount_percentage = 3;
+    String expiration_date    = 4;
+    Int32 usage_limit         = 5;
+    Int32 used_count          = 6;
+    String description        = 7;
+    repeated string term_ids  = 8;
+}
+
+message UpdateResponse {
+    int32 code              = 1;
+    string message          = 2;
+    UpdateResponseBody body = 3;
+}
+
+message UpdateResponseBody {
+    string id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Active
+
+message ActiveRequest {
+    String id = 1;
+}
+
+message ActiveResponse {
+    int32 code              = 1;
+    string message          = 2;
+    ActiveResponseBody body = 3;
+}
+
+message ActiveResponseBody {
+    string id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//InActive
+
+message InActiveRequest {
+    String id = 1;
+}
+
+message InActiveResponse {
+    int32 code                = 1;
+    string message            = 2;
+    InActiveResponseBody body = 3;
+}
+
+message InActiveResponseBody {
+    string id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Delete
+
+message DeleteRequest {
+    String id = 1;
+}
+
+message DeleteResponse {
+    int32 code              = 1;
+    string message          = 2;
+    DeleteResponseBody body = 3;
+}
+
+message DeleteResponseBody {
+    string id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String { string value = 1; }
+message Int32  { int32  value = 1; }
+
+/*-------------------------------------------------------------------*/
+
+service DiscountService {
+
+    rpc Create(CreateRequest) returns (CreateResponse) {};
+
+    rpc Update(UpdateRequest) returns (UpdateResponse) {};
+    
+    rpc Active(ActiveRequest) returns (ActiveResponse) {};
+    
+    rpc InActive(InActiveRequest) returns (InActiveResponse) {};
+    
+    rpc Delete(DeleteRequest) returns (DeleteResponse) {};
+
+    rpc CheckExist(CheckExistRequest) returns (CheckExistResponse) {}
+
+    rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {};
+
+    rpc ReadAllPaginate(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
+
+}
