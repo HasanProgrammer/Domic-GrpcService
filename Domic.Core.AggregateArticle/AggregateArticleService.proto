@@ -4,6 +4,24 @@ package Domic.Core.AggregateArticle.Grpc;
 
 /*-------------------------------------------------------------------*/
 
+//ReadOne
+
+message ReadOneRequest {
+  String id = 1;
+}
+
+message ReadOneResponse {
+  int32 code               = 1;
+  string message           = 2;
+  ReadOneResponseBody body = 3;
+}
+
+message ReadOneResponseBody {
+  string article = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
 //ReadAllPaginate
 
 message ReadAllPaginatedRequest {
@@ -35,6 +53,8 @@ message Int32  { int32  value = 1; }
 
 service AggregateArticleService {
 
+  rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {}
+  
   rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {}
 
 }
