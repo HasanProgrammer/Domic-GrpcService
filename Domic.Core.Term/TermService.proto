@@ -63,6 +63,7 @@ message CreateRequest {
     String description = 5;
     Int32 status       = 6;
     Int32 duration     = 7;
+    String summary     = 8;
 }
 
 message CreateResponse {
@@ -88,6 +89,7 @@ message UpdateRequest {
     String description = 6;
     Int32 status       = 7;
     Int32 duration     = 8;
+    String summary     = 9;
 }
 
 message UpdateResponse {
