@@ -61,8 +61,10 @@ message CreateRequest {
     String term_id     = 1;
     String video_url   = 2;
     String name        = 3;
-    String description = 5;
-    Int32 status       = 6;
+    String description = 4;
+    Int32 status       = 5;
+    Int32 price        = 6;
+    Int32 duration     = 7;
 }
 
 message CreateResponse {
@@ -86,6 +88,9 @@ message UpdateRequest {
     String name        = 4;
     String description = 5;
     Int32 status       = 6;
+    Int32 price        = 7;
+    Int32 duration     = 8;
+    
 }
 
 message UpdateResponse {

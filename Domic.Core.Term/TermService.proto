@@ -59,9 +59,10 @@ message CreateRequest {
     String category_id = 1;
     String image_url   = 2;
     String name        = 3;
-    String price       = 4;
+    Int32 price        = 4;
     String description = 5;
     Int32 status       = 6;
+    Int32 duration     = 7;
 }
 
 message CreateResponse {
@@ -83,9 +84,10 @@ message UpdateRequest {
     String category_id = 2;
     String image_url   = 3;
     String name        = 4;
-    String price       = 5;
+    Int32 price        = 5;
     String description = 6;
     Int32 status       = 7;
+    Int32 duration     = 8;
 }
 
 message UpdateResponse {
