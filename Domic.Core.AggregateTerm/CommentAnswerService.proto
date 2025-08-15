@@ -1,6 +1,6 @@
 ﻿syntax = "proto3";
 
-package Domic.Core.AggregateTerm.Grpc;
+package Domic.Core.AggregateComment.Grpc;
 
 /*-------------------------------------------------------------------*/
 
