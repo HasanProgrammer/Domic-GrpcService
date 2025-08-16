@@ -28,6 +28,9 @@ message CurrentBalenceResponseBody {
 message ReadAllTransactionRequest {
     Int32 page_number    = 1;
     Int32 count_per_page = 2;
+    String user_id       = 3;
+    String search_text   = 4;
+    Int32 sort           = 5;
 }
 
 message ReadAllTransactionResponse {
@@ -47,6 +50,9 @@ message ReadAllTransactionResponseBody {
 message ReadAllTransactionRequestPaginatedObject {
     Int32 page_number    = 1;
     Int32 count_per_page = 2;
+    String user_id       = 3;
+    String search_text   = 4;
+    Int32 sort           = 5;
 }
 
 message ReadAllTransactionRequestPaginatedResponse {
