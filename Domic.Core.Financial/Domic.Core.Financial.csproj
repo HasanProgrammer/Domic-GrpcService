@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>Domic.Grpc.Financial</PackageId>
-        <PackageVersion>1.0.8</PackageVersion>
+        <PackageVersion>1.0.9</PackageVersion>
         <Authors>Karami.Domic</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>

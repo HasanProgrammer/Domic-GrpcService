@@ -4,6 +4,25 @@ package Domic.Core.Financial.Grpc;
 
 /*-------------------------------------------------------------------*/
 
+//CurrentBalence
+
+message CurrentBalenceRequest {
+    
+}
+
+message CurrentBalenceResponse {
+    int32 code                  = 1;
+    string message              = 2;
+    CurrentBalenceResponse body = 3;
+}
+
+message CurrentBalenceResponseBody {
+    int32 amount = 1;
+}
+
+
+/*-------------------------------------------------------------------*/
+
 //ReadAllTransactionRequestObject
 
 message ReadAllTransactionRequestPaginatedObject {
@@ -156,6 +175,7 @@ message Int64  { int64  value = 1; }
 
 service FinancialService {
 
+    rpc CurrentBalence(CurrentBalenceRequest) returns (CurrentBalenceResponse) {};
     rpc ReadAllTransactionRequestPaginated(ReadAllTransactionRequestPaginatedObject) returns (ReadAllTransactionRequestPaginatedResponse) {};
     rpc Create(CreateRequest) returns (CreateResponse) {};
     rpc DecreaseBalanceOfWallet(DecreaseBalanceOfWalletRequest) returns (DecreaseBalanceOfWalletResponse) {};
