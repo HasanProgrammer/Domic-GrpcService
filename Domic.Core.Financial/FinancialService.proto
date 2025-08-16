@@ -42,8 +42,6 @@ message ReadAllTransactionResponseBody {
 
 /*-------------------------------------------------------------------*/
 
-/*-------------------------------------------------------------------*/
-
 //ReadAllTransactionRequestObject
 
 message ReadAllTransactionRequestPaginatedObject {
@@ -197,7 +195,7 @@ message Int64  { int64  value = 1; }
 service FinancialService {
 
     rpc CurrentBalence(CurrentBalenceRequest) returns (CurrentBalenceResponse) {};
-    rpc ReadAllTransactionRequest(ReadAllTransactionRequest) returns (ReadAllTransactionResponse) {};
+    rpc ReadAllTransactionPaginated(ReadAllTransactionRequest) returns (ReadAllTransactionResponse) {};
     rpc ReadAllTransactionRequestPaginated(ReadAllTransactionRequestPaginatedObject) returns (ReadAllTransactionRequestPaginatedResponse) {};
     rpc Create(CreateRequest) returns (CreateResponse) {};
     rpc DecreaseBalanceOfWallet(DecreaseBalanceOfWalletRequest) returns (DecreaseBalanceOfWalletResponse) {};
