@@ -11,13 +11,13 @@ message CurrentBalenceRequest {
 }
 
 message CurrentBalenceResponse {
-    int32 code                  = 1;
-    string message              = 2;
-    CurrentBalenceResponse body = 3;
+    int32 code                      = 1;
+    string message                  = 2;
+    CurrentBalenceResponseBody body = 3;
 }
 
 message CurrentBalenceResponseBody {
-    int32 amount = 1;
+    int64 amount = 1;
 }
 
 
