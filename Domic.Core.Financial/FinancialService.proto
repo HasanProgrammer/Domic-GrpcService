@@ -74,6 +74,7 @@ message CreateRequest {
     Int64 increased_amount = 2;
     Int64 decreased_amount = 3;
     Int32 transaction_type = 4;
+    repeated string items  = 5;
 }
 
 message CreateResponse {
