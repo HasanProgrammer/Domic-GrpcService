@@ -11,6 +11,7 @@ message ReadAllPaginatedRequest {
   Int32 count_per_page = 2;
   String user_id       = 3;
   String search_text   = 4;
+  Int32 sort           = 5;
 }
 
 message ReadAllPaginatedResponse {
