@@ -4,8 +4,8 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
-        <PackageId>Domic.Grpc.Video</PackageId>
-        <PackageVersion>1.1.5</PackageVersion>
+        <PackageId>Domic.Grpc.Season</PackageId>
+        <PackageVersion>1.0.0</PackageVersion>
         <Authors>Karami.Domic</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
@@ -17,7 +17,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Protobuf Include="VideoService.proto">
+      <Protobuf Include="SeasonService.proto">
+        <GrpcServices>Both</GrpcServices>
+        <Access>Public</Access>
+        <ProtoCompile>True</ProtoCompile>
+        <CompileOutputs>True</CompileOutputs>
+        <OutputDir>obj\Debug\net8.0\</OutputDir>
         <Generator>MSBuild:Compile</Generator>
       </Protobuf>
     </ItemGroup>

@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.AggregateTicket"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Financial", "Domic.Core.Financial\Domic.Core.Financial.csproj", "{C77C3732-2BD0-4F8C-B039-7EF4BE2510B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Core.Season", "Domic.Core.Season\Domic.Core.Season.csproj", "{3E50FDD5-3788-40CC-B371-AC87693C9964}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -223,6 +225,18 @@ Global
 		{C77C3732-2BD0-4F8C-B039-7EF4BE2510B2}.Release|x64.Build.0 = Release|Any CPU
 		{C77C3732-2BD0-4F8C-B039-7EF4BE2510B2}.Release|x86.ActiveCfg = Release|Any CPU
 		{C77C3732-2BD0-4F8C-B039-7EF4BE2510B2}.Release|x86.Build.0 = Release|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Debug|x64.Build.0 = Debug|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Debug|x86.Build.0 = Debug|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Release|x64.ActiveCfg = Release|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Release|x64.Build.0 = Release|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Release|x86.ActiveCfg = Release|Any CPU
+		{3E50FDD5-3788-40CC-B371-AC87693C9964}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
