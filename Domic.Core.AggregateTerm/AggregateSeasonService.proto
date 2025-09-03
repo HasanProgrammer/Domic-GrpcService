@@ -1,0 +1,61 @@
+﻿syntax = "proto3";
+
+package Domic.Core.AggregateSeason.Grpc;
+
+/*-------------------------------------------------------------------*/
+
+//ReadAllPaginate
+
+message ReadAllPaginatedRequest {
+  Int32 page_number = 1;
+  Int32 count_per_page = 2;
+  String user_id = 3;
+  String search_text = 4;
+  bool active = 5;
+  Int32 sort = 6;
+}
+
+message ReadAllPaginatedResponse {
+  int32 code = 1;
+  string message = 2;
+  ReadAllPaginatedResponseBody body = 3;
+}
+
+message ReadAllPaginatedResponseBody {
+  string seasons = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadOne
+
+message ReadOneRequest {
+  String id = 1;
+}
+
+message ReadOneResponse {
+  int32 code               = 1;
+  string message           = 2;
+  ReadOneResponseBody body = 3;
+}
+
+message ReadOneResponseBody {
+  string season = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String { string value = 1; }
+message Int32  { int32  value = 1; }
+
+/*-------------------------------------------------------------------*/
+
+service AggregateSeasonService {
+
+  rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {}
+  
+  rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {}
+
+}

@@ -58,12 +58,13 @@ message ReadAllPaginatedResponseBody {
 message CreateRequest {
     String category_id = 1;
     String image_url   = 2;
-    String name        = 3;
-    Int32 price        = 4;
-    String description = 5;
-    Int32 status       = 6;
-    Int32 duration     = 7;
-    String summary     = 8;
+    String tiser_url   = 3;
+    String name        = 4;
+    Int32 price        = 5;
+    String description = 6;
+    Int32 status       = 7;
+    Int32 duration     = 8;
+    String summary     = 9;
 }
 
 message CreateResponse {
@@ -84,12 +85,13 @@ message UpdateRequest {
     String id          = 1;
     String category_id = 2;
     String image_url   = 3;
-    String name        = 4;
-    Int32 price        = 5;
-    String description = 6;
-    Int32 status       = 7;
-    Int32 duration     = 8;
-    String summary     = 9;
+    String tiser_url   = 4;
+    String name        = 5;
+    Int32 price        = 6;
+    String description = 7;
+    Int32 status       = 8;
+    Int32 duration     = 9;
+    String summary     = 10;
 }
 
 message UpdateResponse {
