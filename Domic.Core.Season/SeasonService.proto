@@ -55,6 +55,26 @@ message ReadAllPaginatedResponseBody {
 
 /*-------------------------------------------------------------------*/
 
+//ReadAllPaginatedBasedOnRoles
+
+message ReadAllBasedOnTermIdRequest {
+    Int32 page_number    = 1;
+    Int32 count_per_page = 2;
+    String term_id       = 3; // ( Id )
+}
+
+message ReadAllBasedOnTermIdResponse {
+    int32 code                            = 1;
+    string message                        = 2;
+    ReadAllBasedOnTermIdResponseBody body = 3;
+}
+
+message ReadAllBasedOnTermIdResponseBody {
+    string seasons = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
 //Create
 
 message CreateRequest {
@@ -172,6 +192,8 @@ service SeasonService {
 
     rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {};
 
+    rpc ReadAllBasedOnTermId(ReadAllBasedOnTermIdRequest) returns (ReadAllBasedOnTermIdResponse) {};
+    
     rpc ReadAllPaginated(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
 
 }
