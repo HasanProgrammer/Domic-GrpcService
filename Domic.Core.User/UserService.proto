@@ -58,15 +58,16 @@ message ReadAllPaginatedResponseBody {
 //Create
 
 message CreateRequest {
-    String first_name   = 1;
-    String last_name    = 2;
-    String username     = 3;
-    String password     = 4;
-    String phone_number = 5;
-    String email        = 6;
-    String description  = 7;
-    String roles        = 8;
-    String permissions  = 9;
+    String image_url    = 1;
+    String first_name   = 2;
+    String last_name    = 3;
+    String username     = 4;
+    String password     = 5;
+    String phone_number = 6;
+    String email        = 7;
+    String description  = 8;
+    String roles        = 9;
+    String permissions  = 10;
 }
 
 message CreateResponse {
@@ -85,16 +86,17 @@ message CreateResponseBody {
 
 message UpdateRequest {
     String target_id    = 1;
-    String username     = 2;
-    String password     = 3;
-    String first_name   = 4;
-    String last_name    = 5;
-    String phone_number = 6;
-    String email        = 7;
-    String description  = 8;
-    String roles        = 9;
-    String permissions  = 10;
-    bool is_active      = 11;
+    String image_url    = 2;
+    String username     = 3;
+    String password     = 4;
+    String first_name   = 5;
+    String last_name    = 6;
+    String phone_number = 7;
+    String email        = 8;
+    String description  = 9;
+    String roles        = 10;
+    String permissions  = 11;
+    bool is_active      = 12;
 }
 
 message UpdateResponse {
