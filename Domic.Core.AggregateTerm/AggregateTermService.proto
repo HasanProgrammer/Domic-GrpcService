@@ -13,6 +13,7 @@ message ReadAllPaginatedRequest {
   String search_text = 4;
   bool active = 5;
   Int32 sort = 6;
+  String category_id = 7;
 }
 
 message ReadAllPaginatedResponse {
