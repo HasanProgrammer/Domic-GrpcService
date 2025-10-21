@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <PackageId>Domic.Grpc.Term</PackageId>
-    <PackageVersion>1.1.5</PackageVersion>
+    <PackageVersion>1.1.6</PackageVersion>
     <Authors>Karami.Domic</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
@@ -17,6 +17,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Protobuf Include="CampaignService.proto">
+      <GrpcServices>Both</GrpcServices>
+      <Access>Public</Access>
+      <ProtoCompile>True</ProtoCompile>
+      <CompileOutputs>True</CompileOutputs>
+      <OutputDir>obj\Debug\net8.0\</OutputDir>
+      <Generator>MSBuild:Compile</Generator>
+    </Protobuf>
     <Protobuf Include="DiscountService.proto">
       <Generator>MSBuild:Compile</Generator>
     </Protobuf>

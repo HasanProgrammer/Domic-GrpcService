@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-package Domic.Core.Term.Grpc;
+import "google/protobuf/timestamp.proto";
+
+package Domic.Core.Campaign.Grpc;
 
 /*-------------------------------------------------------------------*/
 
@@ -29,7 +31,7 @@ message ReadOneResponse {
 }
 
 message ReadOneResponseBody {
-    string term = 1; //Serialized
+    string campaign = 1; //Serialized
 }
 
 /*-------------------------------------------------------------------*/
@@ -42,13 +44,13 @@ message ReadAllPaginatedRequest {
 }
 
 message ReadAllPaginatedResponse {
-    int32 code                       = 1;
-    string message                   = 2;
+    int32 code                        = 1;
+    string message                    = 2;
     ReadAllPaginatedResponseBody body = 3;
 }
 
 message ReadAllPaginatedResponseBody {
-    string terms = 1; //Serialized
+    string campaigns = 1; //Serialized
 }
 
 /*-------------------------------------------------------------------*/
@@ -56,15 +58,11 @@ message ReadAllPaginatedResponseBody {
 //Create
 
 message CreateRequest {
-    String category_id = 1;
-    String image_url   = 2;
-    String tiser_url   = 3;
-    String name        = 4;
-    Int32 price        = 5;
-    String description = 6;
-    Int32 status       = 7;
-    Int32 duration     = 8;
-    String summary     = 9;
+    String title                         = 1;
+    String description                   = 2;
+    google.protobuf.Timestamp start_date = 3;
+    google.protobuf.Timestamp end_date   = 4;
+    String terms                         = 5;
 }
 
 message CreateResponse {
@@ -82,16 +80,11 @@ message CreateResponseBody {
 //Update
 
 message UpdateRequest {
-    String id          = 1;
-    String category_id = 2;
-    String image_url   = 3;
-    String tiser_url   = 4;
-    String name        = 5;
-    Int32 price        = 6;
-    String description = 7;
-    Int32 status       = 8;
-    Int32 duration     = 9;
-    String summary     = 10;
+    String title                         = 1;
+    String description                   = 2;
+    google.protobuf.Timestamp start_date = 3;
+    google.protobuf.Timestamp end_date   = 4;
+    String terms                         = 5;
 }
 
 message UpdateResponse {
@@ -160,24 +153,6 @@ message DeleteResponseBody {
 
 /*-------------------------------------------------------------------*/
 
-//IncreaseClickRate
-
-message IncreaseClickRateRequest {
-    String id = 1;
-}
-
-message IncreaseClickRateResponse {
-    int32 code                         = 1;
-    string message                     = 2;
-    IncreaseClickRateResponseBody body = 3;
-}
-
-message IncreaseClickRateResponseBody {
-    bool result = 1;
-}
-
-/*-------------------------------------------------------------------*/
-
 //Global
 
 message String { string value = 1; }
@@ -185,7 +160,7 @@ message Int32  { int32  value = 1; }
 
 /*-------------------------------------------------------------------*/
 
-service TermService {
+service CampaignService {
 
     rpc Create(CreateRequest) returns (CreateResponse) {};
 
@@ -196,8 +171,6 @@ service TermService {
     rpc InActive(InActiveRequest) returns (InActiveResponse) {};
     
     rpc Delete(DeleteRequest) returns (DeleteResponse) {};
-    
-    rpc IncreaseClickRate(IncreaseClickRateRequest) returns (IncreaseClickRateResponse) {};
 
     rpc CheckExist(CheckExistRequest) returns (CheckExistResponse) {}
 
