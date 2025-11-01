@@ -1,0 +1,172 @@
+﻿syntax = "proto3";
+
+package Domic.Core.Stack.Grpc;
+
+/*-------------------------------------------------------------------*/
+
+//CheckExist
+
+message CheckExistRequest {
+  String id = 1;
+}
+
+message CheckExistResponse {
+  bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadOne
+
+message ReadOneRequest {
+  String id = 1;
+}
+
+message ReadOneResponse {
+  int32 code               = 1;
+  string message           = 2;
+  ReadOneResponseBody body = 3;
+}
+
+message ReadOneResponseBody {
+  string stack = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//ReadAllPaginate
+
+message ReadAllPaginatedRequest {
+  Int32 page_number    = 1;
+  Int32 count_per_page = 2;
+}
+
+message ReadAllPaginatedResponse {
+  int32 code                       = 1;
+  string message                   = 2;
+  ReadAllPaginatedResponseBody body = 3;
+}
+
+message ReadAllPaginatedResponseBody {
+  string stacks = 1; //Serialized
+}
+
+/*-------------------------------------------------------------------*/
+
+//Create
+
+message CreateRequest {
+  String name = 1;
+}
+
+message CreateResponse {
+  int32 code              = 1;
+  string message          = 2;
+  CreateResponseBody body = 3;
+}
+
+message CreateResponseBody {
+  string stack_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Update
+
+message UpdateRequest {
+  String id = 1;
+  String name = 2;
+}
+
+message UpdateResponse {
+  int32 code              = 1;
+  string message          = 2;
+  UpdateResponseBody body = 3;
+}
+
+message UpdateResponseBody {
+  string stack_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Active
+
+message ActiveRequest {
+  String id = 1;
+}
+
+message ActiveResponse {
+  int32 code              = 1;
+  string message          = 2;
+  ActiveResponseBody body = 3;
+}
+
+message ActiveResponseBody {
+  string stack_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//InActive
+
+message InActiveRequest {
+  String id = 1;
+}
+
+message InActiveResponse {
+  int32 code                = 1;
+  string message            = 2;
+  InActiveResponseBody body = 3;
+}
+
+message InActiveResponseBody {
+  string stack_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Delete
+
+message DeleteRequest {
+  String id = 1;
+}
+
+message DeleteResponse {
+  int32 code              = 1;
+  string message          = 2;
+  DeleteResponseBody body = 3;
+}
+
+message DeleteResponseBody {
+  string stack_id = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String { string value = 1; }
+message Int32  { int32  value = 1; }
+
+/*-------------------------------------------------------------------*/
+
+service StackService {
+
+  rpc CheckExist(CheckExistRequest) returns (CheckExistResponse) {}
+
+  rpc ReadOne(ReadOneRequest) returns (ReadOneResponse) {};
+
+  rpc ReadAllPaginate(ReadAllPaginatedRequest) returns (ReadAllPaginatedResponse) {};
+
+  rpc Create(CreateRequest) returns (CreateResponse) {};
+  
+  rpc Update(UpdateRequest) returns (UpdateResponse) {};
+
+  rpc Active(ActiveRequest) returns (ActiveResponse) {};
+
+  rpc InActive(InActiveRequest) returns (InActiveResponse) {};
+
+  rpc Delete(DeleteRequest) returns (DeleteResponse) {};
+
+}
