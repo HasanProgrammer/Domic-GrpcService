@@ -60,6 +60,44 @@ message OtpVerificationResponseBody {
 
 /*-------------------------------------------------------------------*/
 
+//EmailGenerationCode
+
+message EmailGenerationCodeRequest {
+  String email_address = 1;
+  String code          = 2;
+}
+
+message EmailGenerationCodeResponse {
+  int32 code                           = 1;
+  string message                       = 2;
+  EmailGenerationCodeResponseBody body = 3;
+}
+
+message EmailGenerationCodeResponseBody {
+  bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//EmailVerification
+
+message EmailVerificationRequest {
+  String email_address = 1;
+  String code          = 2;
+}
+
+message EmailVerificationResponse {
+  int32 code                         = 1;
+  string message                     = 2;
+  EmailVerificationResponseBody body = 3;
+}
+
+message EmailVerificationResponseBody {
+  bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
 //Global
 
 message String { string value = 1; }
@@ -71,5 +109,7 @@ service IdentityService {
     rpc SignIn(SignInRequest) returns (SignInResponse) {}
     rpc OtpGeneration(OtpGenerationRequest) returns (OtpGenerationResponse) {}
     rpc OtpVerification(OtpVerificationRequest) returns (OtpVerificationResponse) {}
+    rpc EmailGenerationCode(EmailGenerationCodeRequest) returns (EmailGenerationCodeResponse) {}
+    rpc EmailVerification(EmailVerificationRequest) returns (EmailVerificationResponse) {}
     
 }
