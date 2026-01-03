@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package Domic.Core.Notification.Grpc;
+
+/*-------------------------------------------------------------------*/
+
+//Create
+
+message CreateRequest {
+  String email_address = 1;
+}
+
+message CreateResponse {
+  int32 code              = 1;
+  string message          = 2;
+  CreateResponseBody body = 3;
+}
+
+message CreateResponseBody {
+  bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//Global
+
+message String { string value = 1; }
+
+/*-------------------------------------------------------------------*/
+
+service NotificationService {
+
+  rpc Create(CreateRequest) returns (CreateResponse) {}
+
+}
