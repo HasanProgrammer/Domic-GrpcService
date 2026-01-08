@@ -26,8 +26,9 @@ message SignInResponseBody {
 //ForgotPassword
 
 message ResetPasswordRequest {
-  String new_password = 1;
-  String email_code   = 2;
+  String new_password  = 1;
+  String email_address = 2;
+  String email_code    = 3;
 }
 
 message ResetPasswordResponse {
@@ -97,25 +98,6 @@ message EmailOtpGenerationResponseBody {
 
 /*-------------------------------------------------------------------*/
 
-//EmailVerification
-
-message EmailOtpVerificationRequest {
-  String email_address = 1;
-  String code          = 2;
-}
-
-message EmailOtpVerificationResponse {
-  int32 code                            = 1;
-  string message                        = 2;
-  EmailOtpVerificationResponseBody body = 3;
-}
-
-message EmailOtpVerificationResponseBody {
-  bool result = 1;
-}
-
-/*-------------------------------------------------------------------*/
-
 //Global
 
 message String { string value = 1; }
@@ -125,10 +107,9 @@ message String { string value = 1; }
 service IdentityService {
 
     rpc SignIn(SignInRequest) returns (SignInResponse) {}
-    rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse) {}
     rpc OtpGeneration(OtpGenerationRequest) returns (OtpGenerationResponse) {}
     rpc OtpVerification(OtpVerificationRequest) returns (OtpVerificationResponse) {}
     rpc EmailOtpGeneration(EmailOtpGenerationRequest) returns (EmailOtpGenerationResponse) {}
-    rpc EmailOtpVerification(EmailOtpVerificationRequest) returns (EmailOtpVerificationResponse) {}
+    rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse) {}
     
 }
