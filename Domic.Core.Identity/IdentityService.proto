@@ -23,6 +23,25 @@ message SignInResponseBody {
 
 /*-------------------------------------------------------------------*/
 
+//ForgotPassword
+
+message ResetPasswordRequest {
+  String new_password = 1;
+  String email_code   = 2;
+}
+
+message ResetPasswordResponse {
+  int32 code                     = 1;
+  string message                 = 2;
+  ResetPasswordResponseBody body = 3;
+}
+
+message ResetPasswordResponseBody {
+  bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
 //OtpGeneration
 
 message OtpGenerationRequest {
@@ -62,18 +81,17 @@ message OtpVerificationResponseBody {
 
 //EmailGenerationCode
 
-message EmailGenerationCodeRequest {
+message EmailOtpGenerationRequest {
   String email_address = 1;
-  String code          = 2;
 }
 
-message EmailGenerationCodeResponse {
-  int32 code                           = 1;
-  string message                       = 2;
-  EmailGenerationCodeResponseBody body = 3;
+message EmailOtpGenerationResponse {
+  int32 code                          = 1;
+  string message                      = 2;
+  EmailOtpGenerationResponseBody body = 3;
 }
 
-message EmailGenerationCodeResponseBody {
+message EmailOtpGenerationResponseBody {
   bool result = 1;
 }
 
@@ -81,18 +99,18 @@ message EmailGenerationCodeResponseBody {
 
 //EmailVerification
 
-message EmailVerificationRequest {
+message EmailOtpVerificationRequest {
   String email_address = 1;
   String code          = 2;
 }
 
-message EmailVerificationResponse {
-  int32 code                         = 1;
-  string message                     = 2;
-  EmailVerificationResponseBody body = 3;
+message EmailOtpVerificationResponse {
+  int32 code                            = 1;
+  string message                        = 2;
+  EmailOtpVerificationResponseBody body = 3;
 }
 
-message EmailVerificationResponseBody {
+message EmailOtpVerificationResponseBody {
   bool result = 1;
 }
 
@@ -107,9 +125,10 @@ message String { string value = 1; }
 service IdentityService {
 
     rpc SignIn(SignInRequest) returns (SignInResponse) {}
+    rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse) {}
     rpc OtpGeneration(OtpGenerationRequest) returns (OtpGenerationResponse) {}
     rpc OtpVerification(OtpVerificationRequest) returns (OtpVerificationResponse) {}
-    rpc EmailGenerationCode(EmailGenerationCodeRequest) returns (EmailGenerationCodeResponse) {}
-    rpc EmailVerification(EmailVerificationRequest) returns (EmailVerificationResponse) {}
+    rpc EmailOtpGeneration(EmailOtpGenerationRequest) returns (EmailOtpGenerationResponse) {}
+    rpc EmailOtpVerification(EmailOtpVerificationRequest) returns (EmailOtpVerificationResponse) {}
     
 }
