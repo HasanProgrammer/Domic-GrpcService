@@ -147,6 +147,44 @@ message InActiveResponseBody {
 
 /*-------------------------------------------------------------------*/
 
+//EmailGenerationCode
+
+message EmailOtpGenerationRequest {
+  String email_address = 1;
+}
+
+message EmailOtpGenerationResponse {
+  int32 code                          = 1;
+  string message                      = 2;
+  EmailOtpGenerationResponseBody body = 3;
+}
+
+message EmailOtpGenerationResponseBody {
+  bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
+//ResetPassword
+
+message ResetPasswordRequest {
+  String new_password  = 1;
+  String email_address = 2;
+  String email_code    = 3;
+}
+
+message ResetPasswordResponse {
+  int32 code                     = 1;
+  string message                 = 2;
+  ResetPasswordResponseBody body = 3;
+}
+
+message ResetPasswordResponseBody {
+  bool result = 1;
+}
+
+/*-------------------------------------------------------------------*/
+
 //Global
 
 message String { string value = 1; }
@@ -163,6 +201,10 @@ service UserService {
     rpc Active(ActiveRequest) returns (ActiveResponse) {};
     
     rpc InActive(InActiveRequest) returns (InActiveResponse) {};
+    
+    rpc EmailOtpGeneration(EmailOtpGenerationRequest) returns (EmailOtpGenerationResponse) {};
+    
+    rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse) {};
 
     rpc CheckExist(CheckExistRequest) returns (CheckExistResponse) {}
 
